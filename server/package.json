@@ -1,0 +1,41 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node src/server.ts",
+    "dev": "ts-node-dev src/server.ts --transpileOnly --ignore-watch node_modules",
+    "knex:migrate": "knex migrate:latest --knexfile knexfile.ts",
+    "knex:seed": "knex seed:run --knexfile knexfile.ts",
+    "heroku-postbuild": "npm run knex:migrate && npm run knex:seed"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/cors": "^2.8.6",
+    "@types/express": "^4.17.6",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "knex": "^0.21.1",
+    "sqlite3": "^4.2.0",
+    "cors": "^2.8.5",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.5"
+  },
+  "devDependencies": {
+    "ts-node": "^8.10.2",
+    "ts-node-dev": "^1.0.0-pre.44",
+    "typescript": "^3.9.5"
+  },
+  "comments": {
+    "scripts": {
+      "heroku-postbuild": "Only necessary when deploying to Heroku"
+    },
+    "dependencies": {
+      "@types/cors": "When deploying to Heroku as TypeScript it's necessery to pass the @types used",
+      "@types/express": "When deploying to Heroku as TypeScript it's necessery to pass the @types used"
+    }
+  }
+}
