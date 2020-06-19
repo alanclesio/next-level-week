@@ -8,10 +8,10 @@ Aplicativo desenvolvido em conjunto com  a [Rocketseat](https://rocketseat.com.b
 
 ![](header.png)
 
-## Installation
+## Instalação
 
-On Terminal or PowerShell:
+No Terminal ou PowerShell:
 
 ```sh
-npm install
+yarn
 ```
